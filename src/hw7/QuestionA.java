@@ -10,14 +10,14 @@ public class QuestionA {
 	public static void main(String[] args) {
 		try {
 			File file = new File("C:/Users/T14 Gen 3/Desktop/JAVA/hw/hw7/Sample.txt");
-			int i;
+			String i;
 			int charCount = 0;
 			int line = 0;
 			FileReader is = new FileReader(file);
 			BufferedReader bis = new BufferedReader(is);
-			while ((i = bis.read()) != -1) {
+			while ((i = bis.readLine()) != null) {
 				line++;
-				charCount += i;
+				charCount += i.length() +1;
 			}
 			System.out.println("共" + file.length() + "個位元組" + "共" + charCount + "個字元" + line + "列資料");
 			bis.close();
